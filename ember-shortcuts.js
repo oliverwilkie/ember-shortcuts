@@ -148,7 +148,8 @@
 
   function targetIsNotInput(event) {
     var tagName = event.target.tagName;
-    return tagName !== 'INPUT' || tagName !== 'SELECT' || tagName !== 'TEXTAREA';
+    // FORKED-QUICKFIX
+    return !tagName.match( /INPUT|SELECT|TEXTAREA/ );
   }
 
   Ember.Shortcuts = Ember.Object.extend({
